@@ -1,0 +1,25 @@
+<odoo>
+
+        <record id="sale_order_duplicate" model="ir.ui.view">
+                <field name="name">sale_order_duplicate</field>
+                <field name="model">sale.order</field>
+                <field name="inherit_id" ref="sale.view_order_form"/>
+               <field name="arch" type="xml">
+                   <field name="payment_term_id" position="after">
+                        <field name="duplicate_reference" />
+                       <field name="product_count" />
+                    </field>
+
+
+                   <xpath expr="//header/button[@name='action_draft']"  position="after">
+                       <button name="duplicate_state"  type="object" string="Duplicate" class="btn-primary"/>
+                        <button name="%(sales_duplicate_wizard_action)d"  type="action" string="Duplicate with Product" class="btn-primary"/>
+                   </xpath>
+
+               </field>
+        </record>
+
+
+
+
+</odoo>

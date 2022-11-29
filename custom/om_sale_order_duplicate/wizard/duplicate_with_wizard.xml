@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="view_duplicate_sales" model="ir.ui.view">
+        <field name="name">view_duplicate_sales.form</field>
+        <field name="model">sale.order.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Duplicate Form">
+                <footer>
+                    <button name="dupliate_action_button" string="Submit" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="sales_duplicate_wizard_action" model="ir.actions.act_window">
+        <field name="name">Duplicate Sale</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.order.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_duplicate_sales"/>
+        <field name="target">new</field>
+    </record>
+</odoo>

@@ -1,0 +1,26 @@
+<odoo>
+
+    <record id="contact_sales" model="ir.ui.view">
+        <field name="name">contact_sales</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='internal_notes']" position="after">
+                <page name="contact_sale" string="Sales">
+                    <field name="sale_order_ids">
+                        <tree string="Tree String">
+                            <field name="name"/>
+                            <field name="user_id"/>
+                            <field name="validity_date"/>
+                            <field name="date_order"/>
+                            <field name="payment_term_id"/>
+                            <field name="state"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>
