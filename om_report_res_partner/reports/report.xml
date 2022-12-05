@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <report
+        id="report_contact"
+        string="Contact Report"
+        model="res.partner"
+        report_type="qweb-pdf"
+        name="om_report_res_partner.report_contact_view"
+        file="om_report_res_partner.report_contact_view"/>
+</odoo>

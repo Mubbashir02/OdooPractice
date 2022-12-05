@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template id="report_contact_template">
+    <t t-call="web.html_container">
+        <t t-call="web.basic_layout">
+
+
+            <style>
+                .header12{
+                    text-align: center;
+                }
+                .footer{
+                    margin-top:50px;
+                }
+                .section p{
+                    font-size:20px;
+                    text-align: justify;
+
+                }
+                .right_footer h6{
+                    margin-left:80px;
+
+                }
+
+            </style>
+
+            <div class="header12">
+                <h1>CLEARANCE CERTIFICATE</h1>
+            </div>
+            <div class="section">
+                <p>It is hereby certified that as per our records, there are no outstanding dues except monthly maintenance charges against Unit # <span><t t-esc="doc.name"/></span>
+                at our project namely <span><t t-esc="doc.parent_id.name"/></span> on <span><t t-esc="doc.city"/></span> <span><t t-esc="doc.state_id.name"/></span> <span><t t-esc="doc.zip"/></span>
+                    <span><t t-esc="doc.country_id.name"/></span> allotted to <span><t t-esc="doc.function"/></span> holding CNIC# <span><t t-esc="doc.phone"/></span>
+                    resident of <span><t t-esc="doc.email"/></span> It is further certified that all outstanding dues of the said
+                    unit has been paid, except the monthly maintenance, grilling and extra work charges.
+                    The Allotee shall pay in advance at least 12-month maintenance/service charges to the
+                    company at the time of taking over possession of the Unit.
+
+                </p>
+            </div>
+
+
+
+            <div class="footer">
+                <div class="row">
+                    <div class="col-8">
+                    <p>----------------------------------------</p>
+                    <h6>Acknowledged by the Allotee</h6>
+
+                </div>
+                <div class="col-4 right_footer ">
+                    <p>----------------------------------------</p>
+                    <h6><t t-esc="doc.parent_id.name"></t></h6>
+
+                </div>
+                </div>
+
+            </div>
+
+
+    </t>
+        </t>
+
+    </template>
+
+<!--this is template-->
+    <template id="report_contact_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="om_report_res_partner.report_contact_template"/>
+            </t>
+        </t>
+
+    </template>
+
+</odoo>
